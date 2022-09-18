@@ -1,0 +1,30 @@
+Para almacenar con "localstorage" ya que este te permite alcenar objetos y permanecerá almacenado en el navegador por tiempo indifinido o hasta que decidas eliminarlo.
+
+Para el uso es muy simple
+
+con localStorage.getItem(_nombre_) podrás acceder al contenido que se encuentra almacenado en el navegador 
+
+con localStorage.setItem(_nombre_, _el-contenido-que-quieras-guardar_), esto te permitirá guardar la información en el navegador
+
+Un ejemplo
+localStorage.setItem('miNombre', 'Juan');
+
+var quienSoy = localStorage.getItem('miGato');
+
+el resultado que tendra "quienSoy" será "Juan"
+
+En el caso que querramos eliminar es parecido a getItem, excepto que lo quita del navegador
+localStorage.removeItem('miNombre');
+
+
+En el caso que se quiera almacenar un array
+var miArreglo = ['hola', 'texto', 'ejemplo', 'poesia'];
+localStorage.setItem('palabras', miArreglo);
+
+y si se hace un 
+console.log(localStorage.getItem('palabras'))
+este devolverá "hola,texto,ejemplo,poesia"
+
+en el caso de volver a convertirlo en array solo se debe agregar .split(',')
+var obtener = localStorage.getItem('palabras').split(',')
+y ya estará convertido en array
